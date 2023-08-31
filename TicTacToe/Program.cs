@@ -104,7 +104,7 @@
 			Console.WriteLine("Player 2 is using O to mark!");
 			Console.WriteLine("Good luck!");
 			Console.WriteLine("Press any key to start the game: ");
-			Console.ReadKey();
+			Console.Read();
 			UpdateBoard();
 
 		}
