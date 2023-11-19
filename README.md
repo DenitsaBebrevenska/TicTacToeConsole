@@ -24,4 +24,19 @@ Winning conditions are checked after each move to determine if a player has won.
 The game is designed to be user-friendly, providing clear messages and prompts throughout.  
 ## Source Code Links
 • [Game version without restart](https://github.com/DenitsaBebrevenska/TicTacToeConsole/blob/master/TicTacToe/Program.cs)  
-• [Game version with available restart upon completition](https://github.com/DenitsaBebrevenska/TicTacToeConsole/blob/master/TicTacToeWithRestartAvailable/Program.cs)
+• [Game version with available restart upon completition](https://github.com/DenitsaBebrevenska/TicTacToeConsole/blob/master/TicTacToeWithRestartAvailable/Program.cs) 
+## Screenshots
+• Welcoming screen  
+![welcoming screen](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/d5fe05c6-5fc8-4256-b778-a2a85ccaa116)  
+• Board  
+![board](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/434f6651-1390-4302-b095-611927bb326f)  
+• Win  
+![win](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/80468b8e-f613-409c-be23-5967bcd983f1)  
+• Tie   
+![tie](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/3d00b7ba-05fe-495c-b376-b35d814bb550)  
+• Invalid input   
+![invalid input](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/00683a04-2898-435d-9d54-c1b283e3b9a1)  
+• Field already taken/ marked by the other player   
+![field taken](https://github.com/DenitsaBebrevenska/TicTacToeConsole/assets/141340307/0e2c9816-b016-445b-8ed4-18bec902d27a)   
+
+
