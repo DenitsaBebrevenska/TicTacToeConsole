@@ -2,24 +2,24 @@
 {
 	internal class Program
 	{
-		public static char[] numbers = { '@', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-		public static string userInput = "";
-		public static bool winAchieved = false; 
-		public static int turn = 1, counter = 0;
+		public static char[] Numbers = { '@', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+		public static string UserInput = "";
+		public static bool WinAchieved = false; 
+		public static int Turn = 1, Counter = 0;
 
 		static void Main(string[] args)
 		{
 			Welcome(); //a welcome message
 
-			while (!winAchieved || counter < 9) //counter reaching 9 = all 9 spots are taken but no one won = tie
+			while (!WinAchieved || Counter < 9) //Counter reaching 9 = all 9 spots are taken but no one won = tie
 			{
 				int result = 0;
 				bool exceptionInput = false;
-				Console.WriteLine($"Player {turn} choose a field: ");
-				userInput = Console.ReadLine();
+				Console.WriteLine($"Player {Turn} choose a field: ");
+				UserInput = Console.ReadLine();
 				try
 				{
-					result = int.Parse(userInput);
+					result = int.Parse(UserInput);
 				}
 				catch (Exception)
 				{
@@ -27,45 +27,45 @@
 				}
 				if (exceptionInput || (result < 1 || result > 9)) // is input an invalid: char/string or number out of range?
 				{ 
-					Console.WriteLine($"Invalid input! Player {turn} please choose a number from 1 to 9!");
+					Console.WriteLine($"Invalid input! Player {Turn} please choose a number from 1 to 9!");
 					continue;
 				}
 
-				if (numbers[result] != 'X' && numbers[result] != 'O') //if valid input
+				if (Numbers[result] != 'X' && Numbers[result] != 'O') //if valid input
 				{
-					if (turn == 1)
+					if (Turn == 1)
 					{
-						numbers[result] = 'X';
+						Numbers[result] = 'X';
 					}
 					else
 					{
-						numbers[result] = 'O';
+						Numbers[result] = 'O';
 					}
-					counter++;
+					Counter++;
 				}
 				else //if field already taken
 				{
-					Console.WriteLine($"That field is already marked! Make another choice player {turn}!");
+					Console.WriteLine($"That field is already marked! Make another choice player {Turn}!");
 					continue;
 				}
-				winAchieved = CheckForWin();
-				if (winAchieved)
+				WinAchieved = CheckForWin();
+				if (WinAchieved)
 				{
 					UpdateBoard();
-					Console.WriteLine($"Congratulations, player {turn}! You won!");
+					Console.WriteLine($"Congratulations, player {Turn}! You won!");
 					break;
 
 				}
-				else if (counter == 9)
+				else if (Counter == 9)
 				{
 					UpdateBoard();
 					Console.WriteLine("It`s a tie!");
 					break;
                 }
-				turn++;
-				if (turn > 2) // switching between players
+				Turn++;
+				if (Turn > 2) // switching between players
 				{
-					turn = 1;
+					Turn = 1;
 				}
 				UpdateBoard();
 			}
@@ -73,14 +73,14 @@
 		}
 		public static bool CheckForWin()
 		{
-			if ((numbers[1] == numbers[2] && numbers[1] == numbers[3]) || (numbers[4] == numbers[5] && numbers[4] == numbers[6])
-				|| (numbers[7] == numbers[8] && numbers[7] == numbers[9])) // checks rows
+			if ((Numbers[1] == Numbers[2] && Numbers[1] == Numbers[3]) || (Numbers[4] == Numbers[5] && Numbers[4] == Numbers[6])
+				|| (Numbers[7] == Numbers[8] && Numbers[7] == Numbers[9])) // checks rows
 			{ return true; }
-			else if ((numbers[1] == numbers[4] && numbers[1] == numbers[7]) || (numbers[2] == numbers[5] && numbers[2] == numbers[8])
-				|| (numbers[3] == numbers[6] && numbers[3] == numbers[9])) //checks columns
+			else if ((Numbers[1] == Numbers[4] && Numbers[1] == Numbers[7]) || (Numbers[2] == Numbers[5] && Numbers[2] == Numbers[8])
+				|| (Numbers[3] == Numbers[6] && Numbers[3] == Numbers[9])) //checks columns
 			{ return true; }
-			else if ((numbers[1] == numbers[5] && numbers[1] == numbers[9]) 
-				|| (numbers[3] == numbers[5] && numbers[3] == numbers[7])) //checks diagonals
+			else if ((Numbers[1] == Numbers[5] && Numbers[1] == Numbers[9]) 
+				|| (Numbers[3] == Numbers[5] && Numbers[3] == Numbers[7])) //checks diagonals
 			{ return true; }
 			else
 			{ return false; }
@@ -88,13 +88,13 @@
 		public static void SetBoard()
 		{
 			Console.WriteLine("      |      |      ");
-			Console.WriteLine($"  {numbers[1]}   |  {numbers[2]}   |  {numbers[3]}  ");
+			Console.WriteLine($"  {Numbers[1]}   |  {Numbers[2]}   |  {Numbers[3]}  ");
 			Console.WriteLine("______|______|______");
 			Console.WriteLine("      |      |      ");
-			Console.WriteLine($"  {numbers[4]}   |  {numbers[5]}   |  {numbers[6]}  ");
+			Console.WriteLine($"  {Numbers[4]}   |  {Numbers[5]}   |  {Numbers[6]}  ");
 			Console.WriteLine("______|______|______");
 			Console.WriteLine("      |      |      ");
-			Console.WriteLine($"  {numbers[7]}   |  {numbers[8]}   |  {numbers[9]}  ");
+			Console.WriteLine($"  {Numbers[7]}   |  {Numbers[8]}   |  {Numbers[9]}  ");
 			Console.WriteLine("      |      |      ");
 		}
 		public static void Welcome()
